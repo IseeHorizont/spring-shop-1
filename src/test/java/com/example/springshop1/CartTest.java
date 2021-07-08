@@ -48,4 +48,17 @@ public class CartTest {
         cartService.clear();
         Assertions.assertEquals(0, cartService.getProducts().size());
     }
+
+    @Test
+    public void addAndDeleteProductInCart() {
+        var product = new Product();
+        product.setId(UUID.randomUUID());
+        product.setPrice(new BigDecimal(5555));
+        product.setName("Test-Product");
+        cartService.getProducts().add(product);
+
+        Assertions.assertNotNull(product);
+        cartService.deleteProduct(product);
+        Assertions.assertNull(cartService.getProducts().get(0));
+    }
 }
