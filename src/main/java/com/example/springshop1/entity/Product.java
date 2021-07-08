@@ -1,15 +1,12 @@
 package com.example.springshop1.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -33,7 +30,6 @@ public class Product {
             this.id = UUID.randomUUID();
         }
     }
-
 
     public UUID getId() {
         return id;
